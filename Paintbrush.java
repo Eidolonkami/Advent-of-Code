@@ -37,7 +37,6 @@ class Paintbrush{
 	}
 
 	private static void bond(Paintbrush[] daughters){
-// 		if(terminated) return;
 		if(daughters[0] != null){
 			daughters[0].sister = daughters[1];
 		}else{
