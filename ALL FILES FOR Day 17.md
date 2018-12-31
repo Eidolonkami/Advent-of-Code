@@ -1,3 +1,6 @@
 # Advent-of-Code
 
-All files relate to day 17, part 1.
+Advent17.java
+Paintbrush.java
+full map.txt
+result.txt
