@@ -1,6 +1,5 @@
 import java.io.*;
 import java.util.*;
-// import tileType.tileType;
 class Advent17 {
 	static SortList sortXs = new SortList(0);
 	static SortList sortYs = new SortList(1);
@@ -28,7 +27,6 @@ class Advent17 {
 			if(!zz.isEmpty()){
 				ArrayList<Integer> xs = new ArrayList<>(zz);
 				Collections.sort(xs);
-// 				println(xs.toString());
 				int next = xs.remove(0) - lowestX;
 				for(int x = 0; x <= (highestX - lowestX); x++){
 					if(y == 0 && x == 500 - lowestX){
@@ -112,65 +110,13 @@ class Advent17 {
 				break;
 			}
 		}
-/*		for(int y = 0; y < grid.length; y++){
-			tileType[] row = grid[y];
-			for(int x = 0; x < row.length; x++){
-				if(row[x] == tileType.SPRING){
-					print('+');
-				}else if(row[x] == tileType.DRY_SAND){
-					print('.');
-				}else if(row[x] == tileType.WET_SAND){
-					print('|');
-				}else if(row[x] == tileType.WATER){
-					print('~');
-				}else{
-					print('#');
-				}
-			}println("");
-		}*/
 		new Paintbrush(j,1,2,null,0).start();
-		if(print) for(int y = -1; y < grid.length; y++){
-			tileType[] row = null;
-			if(y == -1){ continue;
-// 				print("   ");
-// 			}else{
-// 				row = grid[y];
-// 				print(y + " ");
-// 				if(y < 10) print(" ");
-			}
-			row = grid[y];
-			for(int x = 0; x < grid[0].length; x++){
-				if(y == -1){
-					print(x);
-				}else{
-				if(row[x] == tileType.SPRING){
-					print('+');
-				}else if(row[x] == tileType.DRY_SAND){
-					print('.');
-				}else if(row[x] == tileType.WET_SAND){
-					print('|');
-				}else if(row[x] == tileType.WATER){
-					print('~');
-				}else{
-					print('#');
-				}
-// 				print("  ");
-				}
-			}println("");
-		}
 		int wetTiles = 0;
 		for(tileType[] T : grid){
 			for(tileType t : T){
 				if(t == tileType.WET_SAND || t == tileType.WATER) wetTiles++;
 			}
 		}
-		println(wetTiles);
-	}
-
-	public static void print (Object val) {
-		System.out.print (val);
-	}
-	public static void println (Object val) {
-		System.out.println (val);
+		System.out.println(wetTiles); // 29801
 	}
 }
